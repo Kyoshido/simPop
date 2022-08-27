@@ -54,29 +54,29 @@ account sample weights.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">spBwplot</span><span class="op">(</span>
-  <span class="va">inp</span>,
-  <span class="va">x</span>,
-  cond <span class="op">=</span> <span class="cn">NULL</span>,
-  horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
-  coef <span class="op">=</span> <span class="fl">1.5</span>,
-  zeros <span class="op">=</span> <span class="cn">TRUE</span>,
-  minRatio <span class="op">=</span> <span class="cn">NULL</span>,
-  do.out <span class="op">=</span> <span class="cn">FALSE</span>,
-  <span class="va">...</span>
-<span class="op">)</span>
-
-<span class="fu">panelSpBwplot</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, coef <span class="op">=</span> <span class="fl">1.5</span>, zeros <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">ratio</span>, <span class="va">outliers</span>, <span class="va">subscripts</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">getBwplotStats</span><span class="op">(</span><span class="va">x</span>, weights <span class="op">=</span> <span class="cn">NULL</span>, cond <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">data</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span>
-
-<span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span>
-
-<span class="co"># S3 method for data.frame</span>
-<span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span>
-
-<span class="co"># S3 method for default</span>
-<span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">spBwplot</span><span class="op">(</span></span>
+<span>  <span class="va">inp</span>,</span>
+<span>  <span class="va">x</span>,</span>
+<span>  cond <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  horizontal <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  coef <span class="op">=</span> <span class="fl">1.5</span>,</span>
+<span>  zeros <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  minRatio <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  do.out <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">panelSpBwplot</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, coef <span class="op">=</span> <span class="fl">1.5</span>, zeros <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">ratio</span>, <span class="va">outliers</span>, <span class="va">subscripts</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">getBwplotStats</span><span class="op">(</span><span class="va">x</span>, weights <span class="op">=</span> <span class="cn">NULL</span>, cond <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">data</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S3 method for data.frame</span></span>
+<span><span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S3 method for default</span></span>
+<span><span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -84,40 +84,59 @@ account sample weights.</p>
     <dl><dt>inp</dt>
 <dd><p>an object of class <code><a href="simPopObj-class.html">simPopObj</a></code> containing
 survey sample and synthetic population data.</p></dd>
+
+
 <dt>x</dt>
 <dd><p>a character vector specifying the columns of data available in the
 sample and the population (specified in input object 'inp') to be plotted.</p></dd>
+
+
 <dt>cond</dt>
 <dd><p>an optional character vector (of length 1, if used) specifying
 the conditioning variable.</p></dd>
+
+
 <dt>horizontal</dt>
 <dd><p>a logical indicating whether the boxes should be
 horizontal or vertical.</p></dd>
+
+
 <dt>coef</dt>
 <dd><p>a numeric value that determines the extension of the whiskers.</p></dd>
+
+
 <dt>zeros</dt>
 <dd><p>a logical indicating whether the variables specified by
 <code>x</code> are semi-continuous, i.e., contain a considerable amount of zeros.
 If <code>TRUE</code>, the box widths correspond to the proportion of non-zero data
 points and the (weighted) box plot statistics are computed for these
 non-zero data points only.</p></dd>
+
+
 <dt>minRatio</dt>
 <dd><p>a numeric value in \((0,1]\); if <code>zeros</code> is
 <code>TRUE</code>, the boxes may become unreadable for a large proportion of
 zeros. In such a case, this can be used to specify a minimum ratio for the
 box widths. Variable box widths for semi-continuous variables can be
 suppressed by setting this value to 1.</p></dd>
+
+
 <dt>do.out</dt>
 <dd><p>a logical indicating whether data points that lie beyond the
 extremes of the whiskers should be plotted. Note that this is <code>FALSE</code>
 by default.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>further arguments to be passed to
 <code><a href="https://rdrr.io/pkg/lattice/man/xyplot.html" class="external-link">bwplot</a></code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An object of class <code>"trellis"</code>, as returned by
+    
+
+<p>An object of class <code>"trellis"</code>, as returned by
 <code><a href="https://rdrr.io/pkg/lattice/man/xyplot.html" class="external-link">bwplot</a></code>.</p>
     </div>
     <div id="details">
@@ -141,35 +160,35 @@ extracted from the input object <code>inp</code>.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">## these take some time and are not run automatically</span></span>
-<span class="r-in"><span class="co">## copy &amp; paste to the R command line</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span>  <span class="co"># for reproducibility</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span>   <span class="co"># load sample data</span></span>
-<span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="co">## approx. 20 seconds computation time</span></span>
-<span class="r-in"><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>,</span>
-<span class="r-in">  strata<span class="op">=</span><span class="st">"db040"</span>, weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>,</span>
-<span class="r-in">  basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span>, <span class="st">"hsize"</span>, <span class="st">"pl030"</span>, <span class="st">"pb220a"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># multinomial model with random draws</span></span>
-<span class="r-in"><span class="va">eusilcM</span> <span class="op">&lt;-</span> <span class="fu"><a href="simContinuous.html">simContinuous</a></span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="st">"netIncome"</span>,</span>
-<span class="r-in">  regModel  <span class="op">=</span> <span class="op">~</span><span class="va">rb090</span><span class="op">+</span><span class="va">hsize</span><span class="op">+</span><span class="va">pl030</span><span class="op">+</span><span class="va">pb220a</span><span class="op">+</span><span class="va">hsize</span>,</span>
-<span class="r-in">  upper<span class="op">=</span><span class="fl">200000</span>, equidist<span class="op">=</span><span class="cn">FALSE</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">eusilcM</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## these take some time and are not run automatically</span></span></span>
+<span class="r-in"><span><span class="co">## copy &amp; paste to the R command line</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span>  <span class="co"># for reproducibility</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span>   <span class="co"># load sample data</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co">## approx. 20 seconds computation time</span></span></span>
+<span class="r-in"><span><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>,</span></span>
+<span class="r-in"><span>  strata<span class="op">=</span><span class="st">"db040"</span>, weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>,</span></span>
+<span class="r-in"><span>  basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span>, <span class="st">"hsize"</span>, <span class="st">"pl030"</span>, <span class="st">"pb220a"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># multinomial model with random draws</span></span></span>
+<span class="r-in"><span><span class="va">eusilcM</span> <span class="op">&lt;-</span> <span class="fu"><a href="simContinuous.html">simContinuous</a></span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="st">"netIncome"</span>,</span></span>
+<span class="r-in"><span>  regModel  <span class="op">=</span> <span class="op">~</span><span class="va">rb090</span><span class="op">+</span><span class="va">hsize</span><span class="op">+</span><span class="va">pl030</span><span class="op">+</span><span class="va">pb220a</span><span class="op">+</span><span class="va">hsize</span>,</span></span>
+<span class="r-in"><span>  upper<span class="op">=</span><span class="fl">200000</span>, equidist<span class="op">=</span><span class="cn">FALSE</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">eusilcM</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "simPopObj"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"package")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "simPop"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># plot results</span></span>
-<span class="r-in"><span class="fu">spBwplot</span><span class="op">(</span><span class="va">eusilcM</span>, x<span class="op">=</span><span class="st">"netIncome"</span>, cond<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># plot results</span></span></span>
+<span class="r-in"><span><span class="fu">spBwplot</span><span class="op">(</span><span class="va">eusilcM</span>, x<span class="op">=</span><span class="st">"netIncome"</span>, cond<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="spBwplot-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu">spBwplot</span><span class="op">(</span><span class="va">eusilcM</span>, x<span class="op">=</span><span class="st">"netIncome"</span>, cond<span class="op">=</span><span class="st">"rb090"</span>, layout<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">spBwplot</span><span class="op">(</span><span class="va">eusilcM</span>, x<span class="op">=</span><span class="st">"netIncome"</span>, cond<span class="op">=</span><span class="st">"rb090"</span>, layout<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="spBwplot-2.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -184,7 +203,7 @@ extracted from the input object <code>inp</code>.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

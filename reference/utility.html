@@ -50,41 +50,54 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">utility</span><span class="op">(</span>
-  <span class="va">x</span>,
-  <span class="va">y</span>,
-  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"compareColumns"</span>, <span class="st">"compareRows"</span>, <span class="st">"compareRowsHH"</span>, <span class="st">"compareNA"</span><span class="op">)</span>,
-  hhid <span class="op">=</span> <span class="cn">NULL</span>
-<span class="op">)</span>
-
-<span class="fu">utilityModal</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">varx</span>, vary <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">utilityIndicator</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">utility</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  <span class="va">y</span>,</span>
+<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"compareColumns"</span>, <span class="st">"compareRows"</span>, <span class="st">"compareRowsHH"</span>, <span class="st">"compareNA"</span><span class="op">)</span>,</span>
+<span>  hhid <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">utilityModal</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">varx</span>, vary <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">utilityIndicator</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>a data.frame, typically the original data set. For <code>utilityIndicator</code> this should be a vector of length 1.</p></dd>
+
+
 <dt>y</dt>
 <dd><p>a data.frame, typically the corresponding synthetic data set. For <code>utilityIndicator</code> this should be a vector of length 1.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>which measure</p><ul><li><p>compareColumnscompares the intersection of variables</p></li>
 <li><p>compareRowscompares the number of rows</p></li>
 <li><p>compareRowsHHcompares the number of housholds</p></li>
 <li><p>compareNAcompares the number of missings</p></li>
 </ul></dd>
+
+
 <dt>hhid</dt>
 <dd><p>index or name of variable containing the houshold ID</p></dd>
+
+
 <dt>varx</dt>
 <dd><p>name or index of a variable in data.frame x</p></dd>
+
+
 <dt>vary</dt>
 <dd><p>NULL or name or index of a variable in data.frame y corresponding to variable varx in data.frame x. 
 If NULL, the names of the selected variable should be the same in both x and y.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>the measure(s) of interest</p>
+    
+
+<p>the measure(s) of interest</p>
     </div>
     <div id="functions">
     <h2>Functions</h2>
@@ -100,11 +113,11 @@ If NULL, the names of the selected variable should be the same in both x and y.<
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span></span>
-<span class="r-in"><span class="co">## for fast caluclations, took a subsample</span></span>
-<span class="r-in"><span class="va">eusilcP</span> <span class="op">&lt;-</span> <span class="va">eusilcP</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">15000</span>, <span class="op">]</span></span>
-<span class="r-in"><span class="fu">utility</span><span class="op">(</span><span class="va">eusilcS</span>, <span class="va">eusilcP</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co">## for fast caluclations, took a subsample</span></span></span>
+<span class="r-in"><span><span class="va">eusilcP</span> <span class="op">&lt;-</span> <span class="va">eusilcP</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">15000</span>, <span class="op">]</span></span></span>
+<span class="r-in"><span><span class="fu">utility</span><span class="op">(</span><span class="va">eusilcS</span>, <span class="va">eusilcP</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $compareColumns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.5555556</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -117,17 +130,17 @@ If NULL, the names of the selected variable should be the same in both x and y.<
 <span class="r-out co"><span class="r-pr">#&gt;</span> $compareNA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8492675</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">utilityModal</span><span class="op">(</span><span class="va">eusilcS</span>, <span class="va">eusilcP</span>, <span class="st">"age"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">utilityModal</span><span class="op">(</span><span class="va">eusilcS</span>, <span class="va">eusilcP</span>, <span class="st">"age"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.989899</span>
-<span class="r-in"><span class="fu">utilityModal</span><span class="op">(</span><span class="va">eusilcS</span>, <span class="va">eusilcP</span>, <span class="st">"pl030"</span>, <span class="st">"ecoStat"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">utilityModal</span><span class="op">(</span><span class="va">eusilcS</span>, <span class="va">eusilcP</span>, <span class="st">"pl030"</span>, <span class="st">"ecoStat"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">m1</span> <span class="op">&lt;-</span> <span class="fu"><a href="weighted_estimators.html">meanWt</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">$</span><span class="va">age</span>, <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span><span class="op">)</span> </span>
-<span class="r-in"><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">utilityIndicator</span><span class="op">(</span><span class="va">m1</span>, <span class="va">m2</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">m1</span> <span class="op">&lt;-</span> <span class="fu"><a href="weighted_estimators.html">meanWt</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">$</span><span class="va">age</span>, <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span><span class="op">)</span> </span></span>
+<span class="r-in"><span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">utilityIndicator</span><span class="op">(</span><span class="va">m1</span>, <span class="va">m2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.002622137</span>
 </code></pre></div>
     </div>
@@ -143,7 +156,7 @@ If NULL, the names of the selected variable should be the same in both x and y.<
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

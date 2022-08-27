@@ -57,32 +57,43 @@ function that is useful for writing custom wrapper functions.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">manageSimPopObj</span><span class="op">(</span><span class="va">x</span>, <span class="va">var</span>, sample <span class="op">=</span> <span class="cn">FALSE</span>, set <span class="op">=</span> <span class="cn">FALSE</span>, values <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">manageSimPopObj</span><span class="op">(</span><span class="va">x</span>, <span class="va">var</span>, sample <span class="op">=</span> <span class="cn">FALSE</span>, set <span class="op">=</span> <span class="cn">FALSE</span>, values <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>an object of class <code><a href="simPopObj-class.html">simPopObj</a></code>.</p></dd>
+
+
 <dt>var</dt>
 <dd><p>character vector of length 1; variable name that should be set or
 extracted.</p></dd>
+
+
 <dt>sample</dt>
 <dd><p>a logical indicating whether <code>var</code> should be
 extracted/set from slot 'sample' (TRUE) or slot 'pop' (FALSE).</p></dd>
+
+
 <dt>set</dt>
 <dd><p>logical; if TRUE, argument 'values' is set to either the sample
 or population data stored in 'x', depending on argument 'sample'. If FALSE,
 the desired variable given by 'var' is returned from either the sample or
 the pop slot of 'x'.</p></dd>
+
+
 <dt>values</dt>
 <dd><p>vector; if 'set' is TRUE, then this vector is used to update
 the variable of sample or population data depending of choice of argument
 'sample'.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An object of class <code><a href="simPopObj-class.html">simPopObj</a></code> (if 'set' is TRUE)
+    
+
+<p>An object of class <code><a href="simPopObj-class.html">simPopObj</a></code> (if 'set' is TRUE)
 or a vector (if 'set' is FALSE).</p>
     </div>
     <div id="author">
@@ -92,12 +103,12 @@ or a vector (if 'set' is FALSE).</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>, strata<span class="op">=</span><span class="st">"db040"</span>,</span>
-<span class="r-in">  weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPopObj</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>, basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="op">(</span><span class="fu">manageSimPopObj</span><span class="op">(</span><span class="va">simPopObj</span>, var<span class="op">=</span><span class="st">"age"</span>, sample<span class="op">=</span><span class="cn">FALSE</span>, set<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>, strata<span class="op">=</span><span class="st">"db040"</span>,</span></span>
+<span class="r-in"><span>  weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPopObj</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>, basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">(</span><span class="fu">manageSimPopObj</span><span class="op">(</span><span class="va">simPopObj</span>, var<span class="op">=</span><span class="st">"age"</span>, sample<span class="op">=</span><span class="cn">FALSE</span>, set<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     [1] 65 85 21 87 65 68 82 65 53 53 21 66 85 50 74 21 74 37 85 65 46 53 74 81</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    [25] 85 65 79 53 70 65 82 46 68 80 39 68 70 53 37 70 70 81 53 65 66 78 91 74</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    [49] 53 39 36 37 50 78 37 36 52 53 31 39 37 91 75 66 87 65 74 79 87 65 78 65</span>
@@ -3508,7 +3519,7 @@ or a vector (if 'set' is FALSE).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [81769] 51 50 23 22 17 17 38 43 17 13 10 10 51 50 23 22 17 17 51 50 23 22 17 17</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [81793] 43 36 17 15 13 11 51 50 23 22 17 17 51 50 23 22 17 17 39 39 15 12 12  6</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [81817]  3 39 39 15 12 12  6  3 39 39 15 12 12  6  3 39 39 15 12 12  6  3</span>
-<span class="r-in"><span class="op">(</span><span class="fu">manageSimPopObj</span><span class="op">(</span><span class="va">simPopObj</span>, var<span class="op">=</span><span class="st">"age"</span>, sample<span class="op">=</span><span class="cn">TRUE</span>, set<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="op">(</span><span class="fu">manageSimPopObj</span><span class="op">(</span><span class="va">simPopObj</span>, var<span class="op">=</span><span class="st">"age"</span>, sample<span class="op">=</span><span class="cn">TRUE</span>, set<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     [1] 72 66 56 67 70 46 37 41 35  9  6  3 31 61 40 55 52 31 29  1 67 55 61 23</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    [25] 24 42 16 86 85 54 31 51 25 70 55 53 36 40 26 23 63 45 29 44 47 66 74 55</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    [49] 49 46  9 50 48 49 22 27 54 11 54 60 17 46 43 16 15 45 34  5  1 29  4 66</span>
@@ -4012,7 +4023,7 @@ or a vector (if 'set' is FALSE).</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -50,7 +50,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">tableWt</span><span class="op">(</span><span class="va">x</span>, weights <span class="op">=</span> <span class="cn">NULL</span>, useNA <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"no"</span>, <span class="st">"ifany"</span>, <span class="st">"always"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">tableWt</span><span class="op">(</span><span class="va">x</span>, weights <span class="op">=</span> <span class="cn">NULL</span>, useNA <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"no"</span>, <span class="st">"ifany"</span>, <span class="st">"always"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -58,15 +58,22 @@
     <dl><dt>x</dt>
 <dd><p>a vector that can be interpreted as a factor, or a matrix or
 <code>data.frame</code> whose columns can be interpreted as factors.</p></dd>
+
+
 <dt>weights</dt>
 <dd><p>an optional numeric vector containing sample weights.</p></dd>
+
+
 <dt>useNA</dt>
 <dd><p>a logical indicating whether to include extra <code>NA</code> levels
 in the table.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The (weighted) contingency table as an object of class <code>table</code>,
+    
+
+<p>The (weighted) contingency table as an object of class <code>table</code>,
 an array of integer values.</p>
     </div>
     <div id="details">
@@ -86,9 +93,9 @@ weights are not specified, the function <code><a href="https://rdrr.io/r/base/ta
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">tableWt</span><span class="op">(</span><span class="va">eusilcS</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"hsize"</span>, <span class="st">"db040"</span><span class="op">)</span><span class="op">]</span>, weights <span class="op">=</span> <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">tableWt</span><span class="op">(</span><span class="va">eusilcS</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"hsize"</span>, <span class="st">"db040"</span><span class="op">)</span><span class="op">]</span>, weights <span class="op">=</span> <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      db040</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> hsize Burgenland Carinthia Lower Austria Salzburg Styria Tyrol Upper Austria</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1        302       737          2121      713   1630   808          1696</span>
@@ -111,13 +118,13 @@ weights are not specified, the function <code><a href="https://rdrr.io/r/base/ta
 <span class="r-out co"><span class="r-pr">#&gt;</span>     7    114         25</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     8    110          0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     9      0          0</span>
-<span class="r-in"><span class="fu">tableWt</span><span class="op">(</span><span class="va">eusilcS</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rb090"</span>, <span class="st">"pb220a"</span><span class="op">)</span><span class="op">]</span>, weights <span class="op">=</span> <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span>, </span>
-<span class="r-in">    useNA <span class="op">=</span> <span class="st">"ifany"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">tableWt</span><span class="op">(</span><span class="va">eusilcS</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rb090"</span>, <span class="st">"pb220a"</span><span class="op">)</span><span class="op">]</span>, weights <span class="op">=</span> <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span>, </span></span>
+<span class="r-in"><span>    useNA <span class="op">=</span> <span class="st">"ifany"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         pb220a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> rb090       AT    EU Other  &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   male   29646   728  2258  7251</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   female 32133   868  2170  6766</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -132,7 +139,7 @@ weights are not specified, the function <code><a href="https://rdrr.io/r/base/ta
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

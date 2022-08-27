@@ -58,39 +58,39 @@ predictors need to be simulated beforehand.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">simContinuous</span><span class="op">(</span>
-  <span class="va">simPopObj</span>,
-  additional <span class="op">=</span> <span class="st">"netIncome"</span>,
-  method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"multinom"</span>, <span class="st">"lm"</span>, <span class="st">"poisson"</span>, <span class="st">"xgboost"</span><span class="op">)</span>,
-  zeros <span class="op">=</span> <span class="cn">TRUE</span>,
-  breaks <span class="op">=</span> <span class="cn">NULL</span>,
-  lower <span class="op">=</span> <span class="cn">NULL</span>,
-  upper <span class="op">=</span> <span class="cn">NULL</span>,
-  equidist <span class="op">=</span> <span class="cn">TRUE</span>,
-  probs <span class="op">=</span> <span class="cn">NULL</span>,
-  gpd <span class="op">=</span> <span class="cn">TRUE</span>,
-  threshold <span class="op">=</span> <span class="cn">NULL</span>,
-  est <span class="op">=</span> <span class="st">"moments"</span>,
-  limit <span class="op">=</span> <span class="cn">NULL</span>,
-  censor <span class="op">=</span> <span class="cn">NULL</span>,
-  log <span class="op">=</span> <span class="cn">TRUE</span>,
-  const <span class="op">=</span> <span class="cn">NULL</span>,
-  alpha <span class="op">=</span> <span class="fl">0.01</span>,
-  residuals <span class="op">=</span> <span class="cn">TRUE</span>,
-  keep <span class="op">=</span> <span class="cn">TRUE</span>,
-  maxit <span class="op">=</span> <span class="fl">500</span>,
-  MaxNWts <span class="op">=</span> <span class="fl">1500</span>,
-  tol <span class="op">=</span> <span class="va">.Machine</span><span class="op">$</span><span class="va">double.eps</span><span class="op">^</span><span class="fl">0.5</span>,
-  nr_cpus <span class="op">=</span> <span class="cn">NULL</span>,
-  eps <span class="op">=</span> <span class="cn">NULL</span>,
-  regModel <span class="op">=</span> <span class="st">"basic"</span>,
-  byHousehold <span class="op">=</span> <span class="cn">NULL</span>,
-  imputeMissings <span class="op">=</span> <span class="cn">FALSE</span>,
-  <span class="va">seed</span>,
-  verbose <span class="op">=</span> <span class="cn">FALSE</span>,
-  by <span class="op">=</span> <span class="st">"strata"</span>,
-  model_params <span class="op">=</span> <span class="cn">NULL</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">simContinuous</span><span class="op">(</span></span>
+<span>  <span class="va">simPopObj</span>,</span>
+<span>  additional <span class="op">=</span> <span class="st">"netIncome"</span>,</span>
+<span>  method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"multinom"</span>, <span class="st">"lm"</span>, <span class="st">"poisson"</span>, <span class="st">"xgboost"</span><span class="op">)</span>,</span>
+<span>  zeros <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  breaks <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  lower <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  upper <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  equidist <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  probs <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  gpd <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  threshold <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  est <span class="op">=</span> <span class="st">"moments"</span>,</span>
+<span>  limit <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  censor <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  log <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  const <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  alpha <span class="op">=</span> <span class="fl">0.01</span>,</span>
+<span>  residuals <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  keep <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  maxit <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>  MaxNWts <span class="op">=</span> <span class="fl">1500</span>,</span>
+<span>  tol <span class="op">=</span> <span class="va">.Machine</span><span class="op">$</span><span class="va">double.eps</span><span class="op">^</span><span class="fl">0.5</span>,</span>
+<span>  nr_cpus <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  eps <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  regModel <span class="op">=</span> <span class="st">"basic"</span>,</span>
+<span>  byHousehold <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  imputeMissings <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">seed</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  by <span class="op">=</span> <span class="st">"strata"</span>,</span>
+<span>  model_params <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -98,16 +98,22 @@ predictors need to be simulated beforehand.</p>
     <dl><dt>simPopObj</dt>
 <dd><p>a <code><a href="simPopObj-class.html">simPopObj</a></code> holding household survey
 data, population data and optionally some margins.</p></dd>
+
+
 <dt>additional</dt>
 <dd><p>a character string specifying the additional continuous
 variable of <code>dataS</code> that should be simulated for the population data.
 Currently, only one additional variable can be simulated at a time.</p></dd>
+
+
 <dt>method</dt>
 <dd><p>a character string specifying the method to be used for
 simulating the continuous variable. Accepted values are <code>"multinom"</code>,
 for using multinomial log-linear models combined with random draws from the
 resulting categories, <code>"lm"</code>, for using (two-step) regression
 models combined with random error terms, <code>"poisson"</code> for using Poisson regression for count variables, and <code>"xgboost"</code> for using XGBoost.</p></dd>
+
+
 <dt>zeros</dt>
 <dd><p>a logical indicating whether the variable specified by
 <code>additional</code> is semi-continuous, i.e., contains a considerable amount
@@ -116,39 +122,55 @@ factor level for zeros in the response is used. If <code>TRUE</code> and
 <code>method</code> is <code>"lm"</code>, a two-step model is applied. The first step
 thereby uses a log-linear or multinomial log-linear model (see
 “Details”).</p></dd>
+
+
 <dt>breaks</dt>
 <dd><p>an optional numeric vector; if multinomial models are
 computed, this can be used to supply two or more break points for
 categorizing the variable specified by <code>additional</code>. If <code>NULL</code>,
 break points are computed using weighted quantiles.</p></dd>
+
+
 <dt>lower, upper</dt>
 <dd><p>optional numeric values; if multinomial models are
 computed and <code>breaks</code> is <code>NULL</code>, these can be used to specify
 lower and upper bounds other than minimum and maximum, respectively. Note
 that if <code>method</code> is <code>"multinom"</code> and <code>gpd</code> is <code>TRUE</code>
 (see below), <code>upper</code> defaults to <code>Inf</code>.</p></dd>
+
+
 <dt>equidist</dt>
 <dd><p>logical; if <code>method</code> is <code>"multinom"</code> and
 <code>breaks</code> is <code>NULL</code>, this indicates whether the (positive) default
 break points should be equidistant or whether there should be refinements in
 the lower and upper tail (see <code><a href="getBreaks.html">getBreaks</a></code>).</p></dd>
+
+
 <dt>probs</dt>
 <dd><p>numeric vector with values in \([0, 1]\); if <code>method</code> is
 <code>"multinom"</code> and <code>breaks</code> is <code>NULL</code>, this gives probabilities
 for quantiles to be used as (positive) break points. If supplied, this is
 preferred over <code>equidist</code>.</p></dd>
+
+
 <dt>gpd</dt>
 <dd><p>logical; if <code>method</code> is <code>"multinom"</code>, this indicates
 whether the upper tail of the variable specified by <code>additional</code> should
 be simulated by random draws from a (truncated) generalized Pareto
 distribution rather than a uniform distribution.</p></dd>
+
+
 <dt>threshold</dt>
 <dd><p>a numeric value; if <code>method</code> is <code>"multinom"</code>,
 values for categories above <code>threshold</code> are drawn from a (truncated)
 generalized Pareto distribution.</p></dd>
+
+
 <dt>est</dt>
 <dd><p>a character string; if <code>method</code> is <code>"multinom"</code>, the
 estimator to be used to fit the generalized Pareto distribution.</p></dd>
+
+
 <dt>limit</dt>
 <dd><p>an optional named list of lists; if multinomial models are
 computed, this can be used to account for structural zeros. The names of the
@@ -159,6 +181,8 @@ supplied. The probabilities of other outcomes conditional on combinations
 that contain the specified categories of the supplied predictors are set to
 0. Currently, this is only implemented for more than two categories in the
 response.</p></dd>
+
+
 <dt>censor</dt>
 <dd><p>an optional named list of lists or <code>data.frame</code>s; if
 multinomial models are computed, this can be used to account for structural
@@ -168,15 +192,21 @@ containing levels of the predictor variables can be supplied. The
 probability of the specified categories is set to 0 for the respective
 predictor levels. Currently, this is only implemented for more than two
 categories in the response.</p></dd>
+
+
 <dt>log</dt>
 <dd><p>logical; if <code>method</code> is <code>"lm"</code>, this indicates whether
 the linear model should be fitted to the logarithms of the variable
 specified by <code>additional</code>. The predicted values are then
 back-transformed with the exponential function. See “Details” for
 more information.</p></dd>
+
+
 <dt>const</dt>
 <dd><p>numeric; if <code>method</code> is <code>"lm"</code> and <code>log</code> is
 <code>TRUE</code>, this gives a constant to be added before log transformation.</p></dd>
+
+
 <dt>alpha</dt>
 <dd><p>numeric; if <code>method</code> is <code>"lm"</code>, this gives trimming
 parameters for the sample data. Trimming is thereby done with respect to the
@@ -185,20 +215,28 @@ is supplied, the first element gives the trimming proportion for the lower
 part and the second element the trimming proportion for the upper part. If a
 single numeric is supplied, it is used for both. With <code>NULL</code>, trimming
 is suppressed.</p></dd>
+
+
 <dt>residuals</dt>
 <dd><p>logical; if <code>method</code> is <code>"lm"</code>, this indicates
 whether the random error terms should be obtained by draws from the
 residuals. If <code>FALSE</code>, they are drawn from a normal distribution
 (median and MAD of the residuals are used as parameters).</p></dd>
+
+
 <dt>keep</dt>
 <dd><p>logical; if multinomial models are computed, this indicates
 whether the simulated categories should be stored as a variable in the
 resulting population data. If <code>TRUE</code>, the corresponding column name is
 given by <code>additional</code> with postfix <code>"Cat"</code>.</p></dd>
+
+
 <dt>maxit, MaxNWts</dt>
 <dd><p>control parameters to be passed to
 <code><a href="https://rdrr.io/pkg/nnet/man/multinom.html" class="external-link">multinom</a></code> and <code><a href="https://rdrr.io/pkg/nnet/man/nnet.html" class="external-link">nnet</a></code>. See the help file
 for <code><a href="https://rdrr.io/pkg/nnet/man/nnet.html" class="external-link">nnet</a></code>.</p></dd>
+
+
 <dt>tol</dt>
 <dd><p>if <code>method</code> is <code>"lm"</code> and <code>zeros</code> is <code>TRUE</code>,
 a small positive numeric value or <code>NULL</code>. When fitting a log-linear
@@ -208,14 +246,20 @@ levels will be 0. Therefore, coefficients smaller than <code>tol</code> in
 absolute value are replaced by coefficients from an auxiliary model that is
 fit to the whole sample. If <code>NULL</code>, no auxiliary log-linear model is
 computed and no coefficients are replaced.</p></dd>
+
+
 <dt>nr_cpus</dt>
 <dd><p>if specified, an integer number defining the number of cpus
 that should be used for parallel processing.</p></dd>
+
+
 <dt>eps</dt>
 <dd><p>a small positive numeric value, or <code>NULL</code> (the default). In
 the former case and if (multinomial) log-linear models are computed,
 estimated probabilities smaller than this are assumed to result from
 structural zeros and are set to exactly 0.</p></dd>
+
+
 <dt>regModel</dt>
 <dd><p>allows to specify the model that should be for the
 simulation of the additional continuous variable. The following choices are
@@ -230,27 +274,42 @@ factors!</p></li>
 (class 'formula') that will be used. Checks are performed that all required
 variables are available.</p></li>
 </ul></dd>
+
+
 <dt>byHousehold</dt>
 <dd><p>if NULL, simulated values are used as is. If either <code>'sum'</code>,
 <code>'mean'</code> or <code>'random'</code> is specified, the values are aggregated and each member
 of the household gets the same value (mean, sum or a random value) assigned.</p></dd>
+
+
 <dt>imputeMissings</dt>
 <dd><p>if TRUE, missing values in variables that are used for
 the underlying model are imputed using hock-deck.</p></dd>
+
+
 <dt>seed</dt>
 <dd><p>optional; an integer value to be used as the seed of the random
 number generator, or an integer vector containing the state of the random
 number generator to be restored.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>(logical) if <code>TRUE</code>, additional output is written to the promt</p></dd>
+
+
 <dt>by</dt>
 <dd><p>defining which variable to use as split up variable of the estimation. Defaults to the strata variable.</p></dd>
+
+
 <dt>model_params</dt>
 <dd><p>adding optional parameter to the model, at the moment only implemented for xgboost hyperparameters</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An object of class <code><a href="simPopObj-class.html">simPopObj</a></code> containing survey
+    
+
+<p>An object of class <code><a href="simPopObj-class.html">simPopObj</a></code> containing survey
 data as well as the simulated population data including the continuous
 variable specified by <code>additional</code> and possibly simulated categories
 for the desired continous variable.</p>
@@ -312,37 +371,37 @@ Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="co">## approx. 20 seconds computation time</span></span>
-<span class="r-in"><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>, strata<span class="op">=</span><span class="st">"db040"</span>, weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>,</span>
-<span class="r-in">  basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span>, <span class="st">"hsize"</span>, <span class="st">"pl030"</span>, <span class="st">"pb220a"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">regModel</span> <span class="op">=</span> <span class="op">~</span><span class="va">rb090</span><span class="op">+</span><span class="va">hsize</span><span class="op">+</span><span class="va">pl030</span><span class="op">+</span><span class="va">pb220a</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># multinomial model with random draws</span></span>
-<span class="r-in"><span class="va">eusilcM</span> <span class="op">&lt;-</span> <span class="fu">simContinuous</span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="st">"netIncome"</span>,</span>
-<span class="r-in">              regModel <span class="op">=</span> <span class="va">regModel</span>,</span>
-<span class="r-in">              upper<span class="op">=</span><span class="fl">200000</span>, equidist<span class="op">=</span><span class="cn">FALSE</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">eusilcM</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co">## approx. 20 seconds computation time</span></span></span>
+<span class="r-in"><span><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>, strata<span class="op">=</span><span class="st">"db040"</span>, weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>,</span></span>
+<span class="r-in"><span>  basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span>, <span class="st">"hsize"</span>, <span class="st">"pl030"</span>, <span class="st">"pb220a"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">regModel</span> <span class="op">=</span> <span class="op">~</span><span class="va">rb090</span><span class="op">+</span><span class="va">hsize</span><span class="op">+</span><span class="va">pl030</span><span class="op">+</span><span class="va">pb220a</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># multinomial model with random draws</span></span></span>
+<span class="r-in"><span><span class="va">eusilcM</span> <span class="op">&lt;-</span> <span class="fu">simContinuous</span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="st">"netIncome"</span>,</span></span>
+<span class="r-in"><span>              regModel <span class="op">=</span> <span class="va">regModel</span>,</span></span>
+<span class="r-in"><span>              upper<span class="op">=</span><span class="fl">200000</span>, equidist<span class="op">=</span><span class="cn">FALSE</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">eusilcM</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "simPopObj"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"package")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "simPop"</span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="co"># two-step regression</span></span>
-<span class="r-in"><span class="va">eusilcT</span> <span class="op">&lt;-</span> <span class="fu">simContinuous</span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="st">"netIncome"</span>,</span>
-<span class="r-in">              regModel <span class="op">=</span> <span class="st">"basic"</span>,</span>
-<span class="r-in">              method <span class="op">=</span> <span class="st">"lm"</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">eusilcT</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># two-step regression</span></span></span>
+<span class="r-in"><span><span class="va">eusilcT</span> <span class="op">&lt;-</span> <span class="fu">simContinuous</span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="st">"netIncome"</span>,</span></span>
+<span class="r-in"><span>              regModel <span class="op">=</span> <span class="st">"basic"</span>,</span></span>
+<span class="r-in"><span>              method <span class="op">=</span> <span class="st">"lm"</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">eusilcT</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "simPopObj"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"package")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "simPop"</span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -357,7 +416,7 @@ Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

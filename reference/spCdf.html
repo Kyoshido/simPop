@@ -52,34 +52,44 @@ or population data.  For survey data, sample weights are taken into account.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">spCdf</span><span class="op">(</span><span class="va">x</span>, weights <span class="op">=</span> <span class="cn">NULL</span>, approx <span class="op">=</span> <span class="cn">FALSE</span>, n <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">spCdf</span><span class="op">(</span><span class="va">x</span>, weights <span class="op">=</span> <span class="cn">NULL</span>, approx <span class="op">=</span> <span class="cn">FALSE</span>, n <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>a numeric vector.</p></dd>
+
+
 <dt>weights</dt>
 <dd><p>an optional numeric vector containing sample weights.</p></dd>
+
+
 <dt>approx</dt>
 <dd><p>a logical indicating whether an approximation of the
 cumulative distribution function should be computed.</p></dd>
+
+
 <dt>n</dt>
 <dd><p>a single integer value; if <code>approx</code> is <code>TRUE</code>, this
 specifies the number of points at which the approximation takes place (see
 <code><a href="https://rdrr.io/r/stats/approxfun.html" class="external-link">approx</a></code>).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A list of class <code>"spCdf"</code> with the following components:</p>
+    
+
+<p>A list of class <code>"spCdf"</code> with the following components:</p>
 <dl><dt>x</dt>
 <dd><p>a numeric vector containing the \(x\)-coordinates.</p></dd>
-<dt>y</dt>
+ <dt>y</dt>
 <dd><p>a
 numeric vector containing the \(y\)-coordinates.</p></dd>
-<dt>approx</dt>
+ <dt>approx</dt>
 <dd><p>a logical
 indicating whether the coordinates represent an approximation.</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -107,12 +117,12 @@ w_{j} ).\)</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">cdfS</span> <span class="op">&lt;-</span> <span class="fu">spCdf</span><span class="op">(</span><span class="va">eusilcS</span><span class="op">$</span><span class="va">netIncome</span>, weights <span class="op">=</span> <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cdfS</span>, type<span class="op">=</span><span class="st">"s"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">cdfS</span> <span class="op">&lt;-</span> <span class="fu">spCdf</span><span class="op">(</span><span class="va">eusilcS</span><span class="op">$</span><span class="va">netIncome</span>, weights <span class="op">=</span> <span class="va">eusilcS</span><span class="op">$</span><span class="va">rb050</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cdfS</span>, type<span class="op">=</span><span class="st">"s"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="spCdf-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -127,7 +137,7 @@ w_{j} ).\)</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

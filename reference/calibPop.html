@@ -60,32 +60,32 @@ known marginals. The known marginals are also already available in slot
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">calibPop</span><span class="op">(</span>
-  <span class="va">inp</span>,
-  split <span class="op">=</span> <span class="cn">NULL</span>,
-  splitUpper <span class="op">=</span> <span class="cn">NULL</span>,
-  temp <span class="op">=</span> <span class="fl">1</span>,
-  epsP.factor <span class="op">=</span> <span class="fl">0.05</span>,
-  epsH.factor <span class="op">=</span> <span class="fl">0.05</span>,
-  epsMinN <span class="op">=</span> <span class="fl">0</span>,
-  maxiter <span class="op">=</span> <span class="fl">200</span>,
-  temp.cooldown <span class="op">=</span> <span class="fl">0.9</span>,
-  factor.cooldown <span class="op">=</span> <span class="fl">0.85</span>,
-  min.temp <span class="op">=</span> <span class="fl">10</span><span class="op">^</span><span class="op">-</span><span class="fl">3</span>,
-  nr_cpus <span class="op">=</span> <span class="cn">NULL</span>,
-  sizefactor <span class="op">=</span> <span class="fl">2</span>,
-  choose.temp <span class="op">=</span> <span class="cn">TRUE</span>,
-  choose.temp.factor <span class="op">=</span> <span class="fl">0.2</span>,
-  scale.redraw <span class="op">=</span> <span class="fl">0.5</span>,
-  observe.times <span class="op">=</span> <span class="fl">50</span>,
-  observe.break <span class="op">=</span> <span class="fl">0.05</span>,
-  n.forceCooldown <span class="op">=</span> <span class="fl">100</span>,
-  verbose <span class="op">=</span> <span class="cn">FALSE</span>,
-  hhTables <span class="op">=</span> <span class="cn">NULL</span>,
-  persTables <span class="op">=</span> <span class="cn">NULL</span>,
-  redist.var <span class="op">=</span> <span class="cn">NULL</span>,
-  redist.var.factor <span class="op">=</span> <span class="fl">1</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">calibPop</span><span class="op">(</span></span>
+<span>  <span class="va">inp</span>,</span>
+<span>  split <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  splitUpper <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  temp <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  epsP.factor <span class="op">=</span> <span class="fl">0.05</span>,</span>
+<span>  epsH.factor <span class="op">=</span> <span class="fl">0.05</span>,</span>
+<span>  epsMinN <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  maxiter <span class="op">=</span> <span class="fl">200</span>,</span>
+<span>  temp.cooldown <span class="op">=</span> <span class="fl">0.9</span>,</span>
+<span>  factor.cooldown <span class="op">=</span> <span class="fl">0.85</span>,</span>
+<span>  min.temp <span class="op">=</span> <span class="fl">10</span><span class="op">^</span><span class="op">-</span><span class="fl">3</span>,</span>
+<span>  nr_cpus <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  sizefactor <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  choose.temp <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  choose.temp.factor <span class="op">=</span> <span class="fl">0.2</span>,</span>
+<span>  scale.redraw <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>  observe.times <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>  observe.break <span class="op">=</span> <span class="fl">0.05</span>,</span>
+<span>  n.forceCooldown <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  hhTables <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  persTables <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  redist.var <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  redist.var.factor <span class="op">=</span> <span class="fl">1</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -93,12 +93,16 @@ known marginals. The known marginals are also already available in slot
     <dl><dt>inp</dt>
 <dd><p>an object of class <code><a href="simPopObj-class.html">simPopObj</a></code> with slot
 'table' being non-null! (see <code><a href="addKnownMargins.html">addKnownMargins</a></code>).</p></dd>
+
+
 <dt>split</dt>
 <dd><p>given strata in which the problem will be split. Has to
 correspond to a column population data (slot 'pop' of input argument 'inp')
 . For example <code>split = (c("region")</code>, problem will be split for
 different regions. Parallel computing is performed automatically, if
 possible.</p></dd>
+
+
 <dt>splitUpper</dt>
 <dd><p>optional column in the population for which decides the part
 of the population from which to sample for each entry in <code>split</code>.
@@ -107,69 +111,114 @@ For example <code>split = c("region"), splitUpper = c("Country")</code>
 all units from the country are eligable for donor sample when problem is split
 into regions. Is usefull if <code><a href="simInitSpatial.html">simInitSpatial()</a></code> was used and the variable to split
 the problem into results in very small groups (~couple of hundreds to thousands).</p></dd>
+
+
 <dt>temp</dt>
 <dd><p>starting temperatur for simulated annealing algorithm</p></dd>
+
+
 <dt>epsP.factor</dt>
 <dd><p>a factor (between 0 and 1) specifying the acceptance
 error for contingency table on individual level. For example epsP.factor = 0.05 results in an acceptance error for the
 objective function of <code>0.05*sum(People)</code>.</p></dd>
+
+
 <dt>epsH.factor</dt>
 <dd><p>a factor (between 0 and 1) specifying the acceptance
 error for contingency table on household level. For example epsH.factor = 0.05 results in an acceptance error for the
 objective function of <code>0.05*sum(Households)</code>.</p></dd>
+
+
 <dt>epsMinN</dt>
 <dd><p>integer specifying the minimum number of units from which the synthetic populatin can deviate from cells in contingency tables.
 This overwrites <code>epsP.factor</code> and <code>epsH.factor</code>. Is especially usefull if cells in <code>hhTables</code> and <code>persTables</code> are very small, e.g. &lt;10.</p></dd>
+
+
 <dt>maxiter</dt>
 <dd><p>maximum iterations during a temperature step.</p></dd>
+
+
 <dt>temp.cooldown</dt>
 <dd><p>a factor (between 0 and 1) specifying the rate at which
 temperature will be reduced in each step.</p></dd>
+
+
 <dt>factor.cooldown</dt>
 <dd><p>a factor (between 0 and 1) specifying the rate at
 which the number of permutations of housholds, in each iteration, will be
 reduced in each step.</p></dd>
+
+
 <dt>min.temp</dt>
 <dd><p>minimal temperature at which the algorithm will stop.</p></dd>
+
+
 <dt>nr_cpus</dt>
 <dd><p>if specified, an integer number defining the number of cpus
 that should be used for parallel processing.</p></dd>
+
+
 <dt>sizefactor</dt>
 <dd><p>the factor for inflating the population before applying 0/1 weights</p></dd>
+
+
 <dt>choose.temp</dt>
 <dd><p>if TRUE <code>temp</code> will be rescaled according to <code>eps</code> and <code>choose.temp.factor</code>. <code>eps</code> is defined by the product between <code>epsP.factor</code> and <code>epsP.factor</code> with the sum over the target population margins supplied by <code><a href="addKnownMargins.html">addKnownMargins</a></code> or <code>hhTables</code> and <code>persTables</code>.</p></dd>
+
+
 <dt>choose.temp.factor</dt>
 <dd><p>number between (0,1) for rescaling <code>temp</code> for simulated annealing. <code>temp</code> redefined by<code>max(temp,eps*choose.temp.factor)</code>.
 Can be usefull if simulated annealing is split into subgroups with considerably different population sizes. Only used if <code>choose.temp=TRUE</code>.</p></dd>
+
+
 <dt>scale.redraw</dt>
 <dd><p>Number between (0,1) scaling the number of households that need to be drawn and discarded in each iteration step.
 The number of individuals currently selected through simulated annealing is substracted from the sum over the target population margins added to <code>inp</code> via <code>addKnownMargins</code>.
 This difference is divided by the median household size resulting in an estimated number of housholds that the current synthetic population differs from the population margins (~<code>redraw_gap</code>).
 The next iteration will then adjust the number of housholds to be drawn or discarded (<code>redraw</code>) according to <code>max(ceiling(redraw-redraw_gap*scale.redraw),1)</code> or <code>max(ceiling(redraw+redraw_gap*scale.redraw),1)</code> respectively.
 This keeps the number of individuals in the synthetic population relatively stable regarding the population margins. Otherwise the synthetic population might be considerably larger or smaller then the population margins, through selection of many large or small households.</p></dd>
+
+
 <dt>observe.times</dt>
 <dd><p>Number of times the new value of the objective function is saved. If <code>observe.times=0</code> values are not saved.</p></dd>
+
+
 <dt>observe.break</dt>
 <dd><p>When objective value has been saved <code>observe.times</code>-times the coefficient of variation is calculated over saved values; if the coefficient of variation falls below <code>observe.break</code>
 simmulated annealing terminates. This repeats for each new set of <code>observe.times</code> new values of the objecive function. Can help save run time if objective value does not improve much. Disable this termination by either setting <code>observe.times=0</code> or <code>observe.break=0</code>.</p></dd>
+
+
 <dt>n.forceCooldown</dt>
 <dd><p>integer, if the solution does not move for <code>n.forceCooldown</code> iterations then a cooldown is automatically done.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>boolean variable; if TRUE some additional verbose output is
 provided, however only if <code>split</code> is NULL. Otherwise the computation is
 performed in parallel and no useful output can be provided.</p></dd>
+
+
 <dt>hhTables</dt>
 <dd><p>information on population margins for households</p></dd>
+
+
 <dt>persTables</dt>
 <dd><p>information on population margins for persons</p></dd>
+
+
 <dt>redist.var</dt>
 <dd><p>single column in the population which can be redistributed in each `split`. Still experimental!</p></dd>
+
+
 <dt>redist.var.factor</dt>
 <dd><p>numeric in the interval (0,1]. Used in combinationo with `redist.var`, still experimental!</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns an object of class <code><a href="simPopObj-class.html">simPopObj</a></code> with an
+    
+
+<p>Returns an object of class <code><a href="simPopObj-class.html">simPopObj</a></code> with an
 updated population listed in slot 'pop'.</p>
     </div>
     <div id="details">
@@ -204,49 +253,49 @@ Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span> <span class="co"># load sample data</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span> <span class="co"># population data</span></span>
-<span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>, strata<span class="op">=</span><span class="st">"db040"</span>, weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>, basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simCategorical.html">simCategorical</a></span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pl030"</span>, <span class="st">"pb220a"</span><span class="op">)</span>, method<span class="op">=</span><span class="st">"multinom"</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># add margins</span></span>
-<span class="r-in"><span class="va">margins</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">region</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">gender</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">citizenship</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">margins</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"db040"</span>, <span class="st">"rb090"</span>, <span class="st">"pb220a"</span>, <span class="st">"freq"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="addKnownMargins.html">addKnownMargins</a></span><span class="op">(</span><span class="va">simPop</span>, <span class="va">margins</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPop_adj2</span> <span class="op">&lt;-</span> <span class="fu">calibPop</span><span class="op">(</span><span class="va">simPop</span>, split<span class="op">=</span><span class="st">"db040"</span>, </span>
-<span class="r-in">  temp<span class="op">=</span><span class="fl">1</span>, epsP.factor<span class="op">=</span><span class="fl">0.1</span>,</span>
-<span class="r-in"> epsMinN<span class="op">=</span><span class="fl">10</span>, nr_cpus <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"><span class="co"># apply simulated annealing</span></span>
-<span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="va">simPop_adj</span> <span class="op">&lt;-</span> <span class="fu">calibPop</span><span class="op">(</span><span class="va">simPop</span>, split<span class="op">=</span><span class="st">"db040"</span>, temp<span class="op">=</span><span class="fl">1</span>,</span>
-<span class="r-in">epsP.factor<span class="op">=</span><span class="fl">0.1</span>,nr_cpus <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="co">### use multiple different margins</span></span>
-<span class="r-in"><span class="co"># person margins</span></span>
-<span class="r-in"><span class="va">persTables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">region</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">gender</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">citizenship</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">persTables</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"db040"</span>, <span class="st">"rb090"</span>, <span class="st">"pb220a"</span>, <span class="st">"Freq"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># household margins</span></span>
-<span class="r-in"><span class="va">filter_hid</span> <span class="op">&lt;-</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html" class="external-link">duplicated</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">$</span><span class="va">hid</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">eusilcP</span><span class="op">$</span><span class="va">hsize4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">pmin</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">$</span><span class="va">hsize</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">hhTables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">filter_hid</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="va">eusilcP</span><span class="op">[</span><span class="va">filter_hid</span>,<span class="op">]</span><span class="op">$</span><span class="va">region</span><span class="op">+</span><span class="va">eusilcP</span><span class="op">[</span><span class="va">filter_hid</span>,<span class="op">]</span><span class="op">$</span><span class="va">hsize4</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">hhTables</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"db040"</span>, <span class="st">"hsize4"</span>, <span class="st">"Freq"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">simPop</span><span class="op">@</span><span class="va">pop</span><span class="op">@</span><span class="va">data</span><span class="op">$</span><span class="va">hsize4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">pmin</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">simPop</span><span class="op">@</span><span class="va">pop</span><span class="op">@</span><span class="va">data</span><span class="op">$</span><span class="va">hsize</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">simPop_adj_2</span> <span class="op">&lt;-</span> <span class="fu">calibPop</span><span class="op">(</span><span class="va">simPop</span>, split<span class="op">=</span><span class="st">"db040"</span>, </span>
-<span class="r-in">                         temp<span class="op">=</span><span class="fl">1</span>, epsP.factor<span class="op">=</span><span class="fl">0.1</span>,</span>
-<span class="r-in">                         epsH.factor <span class="op">=</span> <span class="fl">0.1</span>,</span>
-<span class="r-in">                         persTables <span class="op">=</span> <span class="va">persTables</span>,</span>
-<span class="r-in">                         hhTables <span class="op">=</span> <span class="va">hhTables</span>,</span>
-<span class="r-in">                         nr_cpus <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># }</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span> <span class="co"># load sample data</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span> <span class="co"># population data</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>, strata<span class="op">=</span><span class="st">"db040"</span>, weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simStructure.html">simStructure</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>, basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="simCategorical.html">simCategorical</a></span><span class="op">(</span><span class="va">simPop</span>, additional<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pl030"</span>, <span class="st">"pb220a"</span><span class="op">)</span>, method<span class="op">=</span><span class="st">"multinom"</span>, nr_cpus<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># add margins</span></span></span>
+<span class="r-in"><span><span class="va">margins</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">region</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">gender</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">citizenship</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">margins</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"db040"</span>, <span class="st">"rb090"</span>, <span class="st">"pb220a"</span>, <span class="st">"freq"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPop</span> <span class="op">&lt;-</span> <span class="fu"><a href="addKnownMargins.html">addKnownMargins</a></span><span class="op">(</span><span class="va">simPop</span>, <span class="va">margins</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPop_adj2</span> <span class="op">&lt;-</span> <span class="fu">calibPop</span><span class="op">(</span><span class="va">simPop</span>, split<span class="op">=</span><span class="st">"db040"</span>, </span></span>
+<span class="r-in"><span>  temp<span class="op">=</span><span class="fl">1</span>, epsP.factor<span class="op">=</span><span class="fl">0.1</span>,</span></span>
+<span class="r-in"><span> epsMinN<span class="op">=</span><span class="fl">10</span>, nr_cpus <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># apply simulated annealing</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="va">simPop_adj</span> <span class="op">&lt;-</span> <span class="fu">calibPop</span><span class="op">(</span><span class="va">simPop</span>, split<span class="op">=</span><span class="st">"db040"</span>, temp<span class="op">=</span><span class="fl">1</span>,</span></span>
+<span class="r-in"><span>epsP.factor<span class="op">=</span><span class="fl">0.1</span>,nr_cpus <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co">### use multiple different margins</span></span></span>
+<span class="r-in"><span><span class="co"># person margins</span></span></span>
+<span class="r-in"><span><span class="va">persTables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">region</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">gender</span> <span class="op">+</span> <span class="va">eusilcP</span><span class="op">$</span><span class="va">citizenship</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">persTables</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"db040"</span>, <span class="st">"rb090"</span>, <span class="st">"pb220a"</span>, <span class="st">"Freq"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># household margins</span></span></span>
+<span class="r-in"><span><span class="va">filter_hid</span> <span class="op">&lt;-</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html" class="external-link">duplicated</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">$</span><span class="va">hid</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">eusilcP</span><span class="op">$</span><span class="va">hsize4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">pmin</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">$</span><span class="va">hsize</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">hhTables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">filter_hid</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="va">eusilcP</span><span class="op">[</span><span class="va">filter_hid</span>,<span class="op">]</span><span class="op">$</span><span class="va">region</span><span class="op">+</span><span class="va">eusilcP</span><span class="op">[</span><span class="va">filter_hid</span>,<span class="op">]</span><span class="op">$</span><span class="va">hsize4</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">hhTables</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"db040"</span>, <span class="st">"hsize4"</span>, <span class="st">"Freq"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">simPop</span><span class="op">@</span><span class="va">pop</span><span class="op">@</span><span class="va">data</span><span class="op">$</span><span class="va">hsize4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">pmin</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">simPop</span><span class="op">@</span><span class="va">pop</span><span class="op">@</span><span class="va">data</span><span class="op">$</span><span class="va">hsize</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">simPop_adj_2</span> <span class="op">&lt;-</span> <span class="fu">calibPop</span><span class="op">(</span><span class="va">simPop</span>, split<span class="op">=</span><span class="st">"db040"</span>, </span></span>
+<span class="r-in"><span>                         temp<span class="op">=</span><span class="fl">1</span>, epsP.factor<span class="op">=</span><span class="fl">0.1</span>,</span></span>
+<span class="r-in"><span>                         epsH.factor <span class="op">=</span> <span class="fl">0.1</span>,</span></span>
+<span class="r-in"><span>                         persTables <span class="op">=</span> <span class="va">persTables</span>,</span></span>
+<span class="r-in"><span>                         hhTables <span class="op">=</span> <span class="va">hhTables</span>,</span></span>
+<span class="r-in"><span>                         nr_cpus <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -261,7 +310,7 @@ Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

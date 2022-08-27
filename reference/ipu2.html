@@ -52,25 +52,25 @@ individual level constraints.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ipu2</span><span class="op">(</span>
-  <span class="va">dat</span>,
-  hid <span class="op">=</span> <span class="cn">NULL</span>,
-  conP <span class="op">=</span> <span class="cn">NULL</span>,
-  conH <span class="op">=</span> <span class="cn">NULL</span>,
-  epsP <span class="op">=</span> <span class="fl">1e-06</span>,
-  epsH <span class="op">=</span> <span class="fl">0.01</span>,
-  verbose <span class="op">=</span> <span class="cn">FALSE</span>,
-  w <span class="op">=</span> <span class="cn">NULL</span>,
-  bound <span class="op">=</span> <span class="fl">4</span>,
-  maxIter <span class="op">=</span> <span class="fl">200</span>,
-  meanHH <span class="op">=</span> <span class="cn">TRUE</span>,
-  allPthenH <span class="op">=</span> <span class="cn">TRUE</span>,
-  returnNA <span class="op">=</span> <span class="cn">TRUE</span>,
-  looseH <span class="op">=</span> <span class="cn">FALSE</span>,
-  numericalWeighting <span class="op">=</span> <span class="cn">NULL</span>,
-  check_hh_vars <span class="op">=</span> <span class="cn">TRUE</span>,
-  conversion_messages <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ipu2</span><span class="op">(</span></span>
+<span>  <span class="va">dat</span>,</span>
+<span>  hid <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  conP <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  conH <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  epsP <span class="op">=</span> <span class="fl">1e-06</span>,</span>
+<span>  epsH <span class="op">=</span> <span class="fl">0.01</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  w <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  bound <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>  maxIter <span class="op">=</span> <span class="fl">200</span>,</span>
+<span>  meanHH <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  allPthenH <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  returnNA <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  looseH <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  numericalWeighting <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  check_hh_vars <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  conversion_messages <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -79,9 +79,13 @@ individual level constraints.</p>
 <dd><p>a <code>data.table</code> containing household ids (optionally), base
 weights (optionally), household and/or personal level variables (numerical
 or categorical) that should be fitted.</p></dd>
+
+
 <dt>hid</dt>
 <dd><p>name of the column containing the household-ids
 within <code>dat</code> or NULL if such a variable does not exist.</p></dd>
+
+
 <dt>conP</dt>
 <dd><p>list or (partly) named list defining the constraints on person
 level.  The list elements are contingency tables in array representation
@@ -89,6 +93,8 @@ with dimnames corresponding to the names of the relevant calibration
 variables in <code>dat</code>. If a numerical variable is to be calibrated, the
 respective list element has to be named with the name of that numerical
 variable. Otherwise the list element shoud NOT be named.</p></dd>
+
+
 <dt>conH</dt>
 <dd><p>list or (partly) named list defining the constraints on
 household level.  The list elements are contingency tables in array
@@ -96,61 +102,93 @@ representation with dimnames corresponding to the names of the relevant
 calibration variables in <code>dat</code>. If a numerical variable is to be
 calibrated, the respective list element has to be named with the name of
 that numerical variable. Otherwise the list element shoud NOT be named.</p></dd>
+
+
 <dt>epsP</dt>
 <dd><p>numeric value or list (of numeric values and/or arrays)
 specifying the convergence limit(s) for <code>conP</code>. The list can contain
 numeric values and/or arrays which must appear in the same order as the
 corresponding constraints in <code>conP</code>. Also, an array must have the same
 dimensions and dimnames as the corresponding constraint in <code>conP</code>.</p></dd>
+
+
 <dt>epsH</dt>
 <dd><p>numeric value or list (of numeric values and/or arrays)
 specifying the convergence limit(s) for <code>conH</code>. The list can contain
 numeric values and/or arrays which must appear in the same order as the
 corresponding constraints in <code>conH</code>. Also, an array must have the same
 dimensions and dimnames as the corresponding constraint in <code>conH</code>.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>if TRUE, some progress information will be printed.</p></dd>
+
+
 <dt>w</dt>
 <dd><p>name if the column containing the base
 weights within <code>dat</code> or NULL if such a variable does not exist. In the
 latter case, every observation in <code>dat</code> is assigned a starting weight
 of 1.</p></dd>
+
+
 <dt>bound</dt>
 <dd><p>numeric value specifying the multiplier for determining the
 weight trimming boundary if the change of the base weights should be
 restricted, i.e. if the weights should stay between 1/<code>bound</code>*<code>w</code>
 and <code>bound</code>*<code>w</code>.</p></dd>
+
+
 <dt>maxIter</dt>
 <dd><p>numeric value specifying the maximum number of iterations
 that should be performed.</p></dd>
+
+
 <dt>meanHH</dt>
 <dd><p>if TRUE, every person in a household is assigned the mean of
 the person weights corresponding to the household. If <code>"geometric"</code>, the geometric mean
 is used rather than the arithmetic mean.</p></dd>
+
+
 <dt>allPthenH</dt>
 <dd><p>if TRUE, all the person level calibration steps are performed before the houshold level calibration steps (and <code>meanHH</code>, if specified).
 If FALSE, the houshold level calibration steps (and <code>meanHH</code>, if specified) are performed after everey person level calibration step.
 This can lead to better convergence properties in certain cases but also means that the total number of calibration steps is increased.</p></dd>
+
+
 <dt>returnNA</dt>
 <dd><p>if TRUE, the calibrated weight will be set to NA in case of no convergence.</p></dd>
+
+
 <dt>looseH</dt>
 <dd><p>if FALSE, the actual constraints <code>conH</code> are used for calibrating all the hh weights.
 If TRUE, only the weights for which the lower and upper thresholds defined by <code>conH</code> and <code>epsH</code> are exceeded
 are calibrated. They are however not calibrated against the actual constraints <code>conH</code> but against
 these lower and upper thresholds, i.e. <code>conH</code>-<code>conH</code>*<code>epsH</code> and <code>conH</code>+<code>conH</code>*<code>epsH</code>.</p></dd>
+
+
 <dt>numericalWeighting</dt>
 <dd><p>If NULL computeLinear from the pacakge survey sd will be used.</p></dd>
+
+
 <dt>check_hh_vars</dt>
 <dd><p>If <code>TRUE</code> check for non-unique values inside of a household for variables in
 household constraints</p></dd>
+
+
 <dt>conversion_messages</dt>
 <dd><p>show a message, if inputs need to be reformatted. This can be useful for speed
 optimizations if ipu2 is called several times with similar inputs (for example bootstrapping)</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The function will return the input data <code>dat</code> with the
-calibrated weights <code>calibWeight</code> as an additional column as well as attributes. If no convergence has been reached in <code>maxIter</code>steps, and <code>returnNA</code> is <code>TRUE</code> (the default), the column <code>calibWeights</code> will only consist of <code>NA</code>s. The attributes of the table are
+    
+
+<p>The function will return the input data <code>dat</code> with the
+calibrated weights <code>calibWeight</code> as an additional column as well as attributes. If no convergence has been reached in <code>maxIter</code></p>
+
+
+<p>steps, and <code>returnNA</code> is <code>TRUE</code> (the default), the column <code>calibWeights</code> will only consist of <code>NA</code>s. The attributes of the table are
 attributes derived from the <code>data.table</code> class as well as the following.</p><table class="table table"><tr><td><code>converged</code></td><td>Did the algorithm converge in <code>maxIter</code> steps?</td></tr><tr><td><code>iterations</code></td><td>The number of iterations performed.</td></tr><tr><td><code>conP</code>, <code>conH</code>, <code>epsP</code>, <code>epsH</code></td><td>See Arguments.</td></tr><tr><td><code>conP_adj</code>, <code>conH_adj</code></td><td>Adjusted versions of <code>conP</code> and <code>conH</code></td></tr><tr><td><code>formP</code>, <code>formH</code></td><td>Formulas that were used to calculate <code>conP_adj</code> and <code>conH_adj</code> based on the output table.</td></tr></table></div>
     <div id="details">
     <h2>Details</h2>
@@ -180,20 +218,20 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setDT.html" class="external-link">setDT</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">eusilcS</span> <span class="op">&lt;-</span> <span class="va">eusilcS</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">db030</span>,<span class="va">hsize</span>,<span class="va">db040</span>,<span class="va">age</span>,<span class="va">rb090</span>,<span class="va">netIncome</span>,<span class="va">db090</span>,<span class="va">rb050</span><span class="op">)</span><span class="op">]</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## rename columns</span></span>
-<span class="r-in"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"rb090"</span>, <span class="st">"gender"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"db040"</span>, <span class="st">"state"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"db030"</span>, <span class="st">"household"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"rb050"</span>, <span class="st">"weight"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## some recoding</span></span>
-<span class="r-in"><span class="co"># generate age groups</span></span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">agegroup</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html" class="external-link">cut</a></span><span class="op">(</span><span class="va">age</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="fl">10</span><span class="op">*</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="cn">Inf</span><span class="op">)</span>, right <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">]</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setDT.html" class="external-link">setDT</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">eusilcS</span> <span class="op">&lt;-</span> <span class="va">eusilcS</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">db030</span>,<span class="va">hsize</span>,<span class="va">db040</span>,<span class="va">age</span>,<span class="va">rb090</span>,<span class="va">netIncome</span>,<span class="va">db090</span>,<span class="va">rb050</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## rename columns</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"rb090"</span>, <span class="st">"gender"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"db040"</span>, <span class="st">"state"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"db030"</span>, <span class="st">"household"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">eusilcS</span>, <span class="st">"rb050"</span>, <span class="st">"weight"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## some recoding</span></span></span>
+<span class="r-in"><span><span class="co"># generate age groups</span></span></span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">agegroup</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html" class="external-link">cut</a></span><span class="op">(</span><span class="va">age</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="fl">10</span><span class="op">*</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="cn">Inf</span><span class="op">)</span>, right <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -218,8 +256,8 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)</span>
-<span class="r-in"><span class="co"># some recoding of netIncome for reasons of simplicity</span></span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">netIncome</span><span class="op">)</span>, <span class="va">netIncome</span> <span class="op">:=</span> <span class="fl">0</span><span class="op">]</span> </span>
+<span class="r-in"><span><span class="co"># some recoding of netIncome for reasons of simplicity</span></span></span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">netIncome</span><span class="op">)</span>, <span class="va">netIncome</span> <span class="op">:=</span> <span class="fl">0</span><span class="op">]</span> </span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -244,7 +282,7 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)</span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span><span class="va">netIncome</span> <span class="op">&lt;</span> <span class="fl">0</span>, <span class="va">netIncome</span> <span class="op">:=</span> <span class="fl">0</span><span class="op">]</span> </span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span><span class="va">netIncome</span> <span class="op">&lt;</span> <span class="fl">0</span>, <span class="va">netIncome</span> <span class="op">:=</span> <span class="fl">0</span><span class="op">]</span> </span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -269,8 +307,8 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)</span>
-<span class="r-in"><span class="co"># set hsize to 1,...,5+</span></span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">hsize</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html" class="external-link">cut</a></span><span class="op">(</span><span class="va">hsize</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">4</span>, <span class="cn">Inf</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, <span class="st">"5+"</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
+<span class="r-in"><span><span class="co"># set hsize to 1,...,5+</span></span></span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">hsize</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html" class="external-link">cut</a></span><span class="op">(</span><span class="va">hsize</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">4</span>, <span class="cn">Inf</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, <span class="st">"5+"</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -295,8 +333,8 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)</span>
-<span class="r-in"><span class="co"># treat households as a factor variable</span></span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">household</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">household</span><span class="op">)</span><span class="op">]</span></span>
+<span class="r-in"><span><span class="co"># treat households as a factor variable</span></span></span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">household</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">household</span><span class="op">)</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -321,9 +359,9 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## example for base weights assuming a simple random sample of households stratified per region</span></span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">regSamp</span> <span class="op">:=</span> <span class="va">.N</span>, by <span class="op">=</span> <span class="va">state</span><span class="op">]</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## example for base weights assuming a simple random sample of households stratified per region</span></span></span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">regSamp</span> <span class="op">:=</span> <span class="va">.N</span>, by <span class="op">=</span> <span class="va">state</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -348,7 +386,7 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)     927</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)    1789</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)    1789</span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">regPop</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>, by <span class="op">=</span> <span class="va">state</span><span class="op">]</span></span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">regPop</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">weight</span><span class="op">)</span>, by <span class="op">=</span> <span class="va">state</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -373,7 +411,7 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)     927  5637.013</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)    1789 16006.860</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)    1789 16006.860</span>
-<span class="r-in"><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">baseWeight</span> <span class="op">:=</span> <span class="va">regPop</span><span class="op">/</span><span class="va">regSamp</span><span class="op">]</span></span>
+<span class="r-in"><span><span class="va">eusilcS</span><span class="op">[</span>, <span class="va">baseWeight</span> <span class="op">:=</span> <span class="va">regPop</span><span class="op">/</span><span class="va">regSamp</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        household hsize         state age gender netIncome    db090   weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:         1     2      Salzburg  72   male  22675.48 7.822929 7.822929</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     2:         1     2      Salzburg  66 female  16999.29 7.822929 7.822929</span>
@@ -398,30 +436,30 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11723:  [50,60)     927  5637.013   6.080920</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11724:  [50,60)    1789 16006.860   8.947379</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11725:  [50,60)    1789 16006.860   8.947379</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## constraints on person level</span></span>
-<span class="r-in"><span class="co"># age </span></span>
-<span class="r-in"><span class="va">conP1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">agegroup</span>, data <span class="op">=</span> <span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># gender by region</span></span>
-<span class="r-in"><span class="va">conP2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">gender</span> <span class="op">+</span> <span class="va">state</span>, data <span class="op">=</span> <span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># personal net income by gender</span></span>
-<span class="r-in"><span class="va">conP3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span><span class="op">*</span><span class="va">netIncome</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">eusilcS</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## constraints on household level</span></span>
-<span class="r-in"><span class="va">conH1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">hsize</span> <span class="op">+</span> <span class="va">state</span>, data <span class="op">=</span> <span class="va">eusilcS</span>, subset <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/duplicated.html" class="external-link">duplicated</a></span><span class="op">(</span><span class="va">household</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># array of convergence limits for conH1</span></span>
-<span class="r-in"><span class="va">epsH1</span> <span class="op">&lt;-</span> <span class="va">conH1</span></span>
-<span class="r-in"><span class="va">epsH1</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,<span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0.005</span></span>
-<span class="r-in"><span class="va">epsH1</span><span class="op">[</span><span class="st">"5+"</span>,<span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0.2</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># without array epsH1</span></span>
-<span class="r-in"><span class="va">calibweights1</span> <span class="op">&lt;-</span> <span class="fu">ipu2</span><span class="op">(</span><span class="va">eusilcS</span>, hid <span class="op">=</span> <span class="st">"household"</span>, </span>
-<span class="r-in">                      conP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conP1</span>, <span class="va">conP2</span>, netIncome <span class="op">=</span> <span class="va">conP3</span><span class="op">)</span>, </span>
-<span class="r-in">                      conH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conH1</span><span class="op">)</span>, </span>
-<span class="r-in">                      epsP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fl">1e-06</span>, <span class="fl">1e-06</span>, <span class="fl">1e-03</span><span class="op">)</span>,</span>
-<span class="r-in">                      epsH <span class="op">=</span> <span class="fl">0.01</span>,  </span>
-<span class="r-in">                      bound <span class="op">=</span> <span class="cn">NULL</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>,  maxIter <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## constraints on person level</span></span></span>
+<span class="r-in"><span><span class="co"># age </span></span></span>
+<span class="r-in"><span><span class="va">conP1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">agegroup</span>, data <span class="op">=</span> <span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># gender by region</span></span></span>
+<span class="r-in"><span><span class="va">conP2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">gender</span> <span class="op">+</span> <span class="va">state</span>, data <span class="op">=</span> <span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># personal net income by gender</span></span></span>
+<span class="r-in"><span><span class="va">conP3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span><span class="op">*</span><span class="va">netIncome</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">eusilcS</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## constraints on household level</span></span></span>
+<span class="r-in"><span><span class="va">conH1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html" class="external-link">xtabs</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">hsize</span> <span class="op">+</span> <span class="va">state</span>, data <span class="op">=</span> <span class="va">eusilcS</span>, subset <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html" class="external-link">duplicated</a></span><span class="op">(</span><span class="va">household</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># array of convergence limits for conH1</span></span></span>
+<span class="r-in"><span><span class="va">epsH1</span> <span class="op">&lt;-</span> <span class="va">conH1</span></span></span>
+<span class="r-in"><span><span class="va">epsH1</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,<span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0.005</span></span></span>
+<span class="r-in"><span><span class="va">epsH1</span><span class="op">[</span><span class="st">"5+"</span>,<span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0.2</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># without array epsH1</span></span></span>
+<span class="r-in"><span><span class="va">calibweights1</span> <span class="op">&lt;-</span> <span class="fu">ipu2</span><span class="op">(</span><span class="va">eusilcS</span>, hid <span class="op">=</span> <span class="st">"household"</span>, </span></span>
+<span class="r-in"><span>                      conP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conP1</span>, <span class="va">conP2</span>, netIncome <span class="op">=</span> <span class="va">conP3</span><span class="op">)</span>, </span></span>
+<span class="r-in"><span>                      conH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conH1</span><span class="op">)</span>, </span></span>
+<span class="r-in"><span>                      epsP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fl">1e-06</span>, <span class="fl">1e-06</span>, <span class="fl">1e-03</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                      epsH <span class="op">=</span> <span class="fl">0.01</span>,  </span></span>
+<span class="r-in"><span>                      bound <span class="op">=</span> <span class="cn">NULL</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>,  maxIter <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>the functionality of ipu2 moved to the package surveysd in the function ipf</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 10:Not yet converged for P-Constraint1</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 10:Not yet converged for P-Constraint2</span>
@@ -434,15 +472,15 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 40:Not yet converged for P-Constraint2</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Iteration stopped after 43 steps</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Convergence reached</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># with array epsH1, base weights and bound</span></span>
-<span class="r-in"><span class="va">calibweights2</span> <span class="op">&lt;-</span> <span class="fu">ipu2</span><span class="op">(</span><span class="va">eusilcS</span>, hid <span class="op">=</span> <span class="st">"household"</span>, </span>
-<span class="r-in">                      conP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conP1</span>, <span class="va">conP2</span><span class="op">)</span>, </span>
-<span class="r-in">                      conH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conH1</span><span class="op">)</span>, </span>
-<span class="r-in">                      epsP <span class="op">=</span> <span class="fl">1e-06</span>,</span>
-<span class="r-in">                      epsH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">epsH1</span><span class="op">)</span>,  </span>
-<span class="r-in">                      w <span class="op">=</span> <span class="st">"baseWeight"</span>,</span>
-<span class="r-in">                      bound <span class="op">=</span> <span class="fl">4</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, maxIter <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># with array epsH1, base weights and bound</span></span></span>
+<span class="r-in"><span><span class="va">calibweights2</span> <span class="op">&lt;-</span> <span class="fu">ipu2</span><span class="op">(</span><span class="va">eusilcS</span>, hid <span class="op">=</span> <span class="st">"household"</span>, </span></span>
+<span class="r-in"><span>                      conP <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conP1</span>, <span class="va">conP2</span><span class="op">)</span>, </span></span>
+<span class="r-in"><span>                      conH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">conH1</span><span class="op">)</span>, </span></span>
+<span class="r-in"><span>                      epsP <span class="op">=</span> <span class="fl">1e-06</span>,</span></span>
+<span class="r-in"><span>                      epsH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">epsH1</span><span class="op">)</span>,  </span></span>
+<span class="r-in"><span>                      w <span class="op">=</span> <span class="st">"baseWeight"</span>,</span></span>
+<span class="r-in"><span>                      bound <span class="op">=</span> <span class="fl">4</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, maxIter <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>the functionality of ipu2 moved to the package surveysd in the function ipf</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 10:Not yet converged for P-Constraint1</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 10:Not yet converged for P-Constraint2</span>
@@ -455,9 +493,9 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 40:Not yet converged for P-Constraint2</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Iteration stopped after 46 steps</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Convergence reached</span>
-<span class="r-in">                      </span>
-<span class="r-in"><span class="co"># show an adjusted version of conP and the original</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">calibweights2</span>, <span class="st">"conP_adj"</span><span class="op">)</span></span>
+<span class="r-in"><span>                      </span></span>
+<span class="r-in"><span><span class="co"># show an adjusted version of conP and the original</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">calibweights2</span>, <span class="st">"conP_adj"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> agegroup</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [-Inf,10)    [10,20)    [20,30)    [30,40)    [40,50)    [50,60)    [60,70) </span>
@@ -475,7 +513,7 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span>   male        6994.741 7569.677   1850.917</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   female      7218.038 8437.181   1915.598</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">calibweights2</span>, <span class="st">"conP"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">calibweights2</span>, <span class="st">"conP"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> agegroup</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [-Inf,10)    [10,20)    [20,30)    [30,40)    [40,50)    [50,60)    [60,70) </span>
@@ -493,7 +531,7 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 <span class="r-out co"><span class="r-pr">#&gt;</span>   male        6994.744 7569.680   1850.918</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   female      7218.033 8437.181   1915.596</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -508,7 +546,7 @@ Setting <code>check_hh_vars</code> to <code>FALSE</code> can also incease the pe
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
