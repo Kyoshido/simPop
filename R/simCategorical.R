@@ -282,7 +282,7 @@ generateValues_distribution <- function(dataSample, dataPop, params) {
 #' }
 simCategorical <- function(simPopObj, additional,
     method = c("multinom", "distribution","ctree","cforest","ranger","xgboost"),
-    limit = NULL, censor = NULL, maxit = 500, MaxNWts = 1500,
+    limit = NULL, censor = NULL, maxit = 500, MaxNWts = 10000000,
     eps = NULL, nr_cpus = NULL, regModel = NULL, seed = 1,
     verbose = FALSE,by = "strata",model_params = NULL) {
 
