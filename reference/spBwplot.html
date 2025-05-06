@@ -5,7 +5,7 @@ account sample weights."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -30,20 +30,20 @@ account sample weights."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/statistikat/simPop/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Weighted box plots</h1>
-    <small class="dont-index">Source: <a href="https://github.com/statistikat/simPop/blob/HEAD/R/spBwplot.R" class="external-link"><code>R/spBwplot.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/statistikat/simPop/blob/master/R/spBwplot.R" class="external-link"><code>R/spBwplot.R</code></a></small>
     <div class="hidden name"><code>spBwplot.Rd</code></div>
     </div>
 
@@ -72,40 +72,42 @@ account sample weights.</p>
 <span></span>
 <span><span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># S3 method for data.frame</span></span>
+<span><span class="co"># S3 method for class 'data.frame'</span></span>
 <span><span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># S3 method for default</span></span>
+<span><span class="co"># Default S3 method</span></span>
 <span><span class="fu">prepBwplotStats</span><span class="op">(</span><span class="va">x</span>, <span class="va">w</span>, <span class="va">...</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>inp</dt>
+
+
+<dl><dt id="arg-inp">inp<a class="anchor" aria-label="anchor" href="#arg-inp"></a></dt>
 <dd><p>an object of class <code><a href="simPopObj-class.html">simPopObj</a></code> containing
 survey sample and synthetic population data.</p></dd>
 
 
-<dt>x</dt>
+<dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>a character vector specifying the columns of data available in the
 sample and the population (specified in input object 'inp') to be plotted.</p></dd>
 
 
-<dt>cond</dt>
+<dt id="arg-cond">cond<a class="anchor" aria-label="anchor" href="#arg-cond"></a></dt>
 <dd><p>an optional character vector (of length 1, if used) specifying
 the conditioning variable.</p></dd>
 
 
-<dt>horizontal</dt>
+<dt id="arg-horizontal">horizontal<a class="anchor" aria-label="anchor" href="#arg-horizontal"></a></dt>
 <dd><p>a logical indicating whether the boxes should be
 horizontal or vertical.</p></dd>
 
 
-<dt>coef</dt>
+<dt id="arg-coef">coef<a class="anchor" aria-label="anchor" href="#arg-coef"></a></dt>
 <dd><p>a numeric value that determines the extension of the whiskers.</p></dd>
 
 
-<dt>zeros</dt>
+<dt id="arg-zeros">zeros<a class="anchor" aria-label="anchor" href="#arg-zeros"></a></dt>
 <dd><p>a logical indicating whether the variables specified by
 <code>x</code> are semi-continuous, i.e., contain a considerable amount of zeros.
 If <code>TRUE</code>, the box widths correspond to the proportion of non-zero data
@@ -113,7 +115,7 @@ points and the (weighted) box plot statistics are computed for these
 non-zero data points only.</p></dd>
 
 
-<dt>minRatio</dt>
+<dt id="arg-minratio">minRatio<a class="anchor" aria-label="anchor" href="#arg-minratio"></a></dt>
 <dd><p>a numeric value in \((0,1]\); if <code>zeros</code> is
 <code>TRUE</code>, the boxes may become unreadable for a large proportion of
 zeros. In such a case, this can be used to specify a minimum ratio for the
@@ -121,22 +123,20 @@ box widths. Variable box widths for semi-continuous variables can be
 suppressed by setting this value to 1.</p></dd>
 
 
-<dt>do.out</dt>
+<dt id="arg-do-out">do.out<a class="anchor" aria-label="anchor" href="#arg-do-out"></a></dt>
 <dd><p>a logical indicating whether data points that lie beyond the
 extremes of the whiskers should be plotted. Note that this is <code>FALSE</code>
 by default.</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>further arguments to be passed to
 <code><a href="https://rdrr.io/pkg/lattice/man/xyplot.html" class="external-link">bwplot</a></code>.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>An object of class <code>"trellis"</code>, as returned by
+    <p>An object of class <code>"trellis"</code>, as returned by
 <code><a href="https://rdrr.io/pkg/lattice/man/xyplot.html" class="external-link">bwplot</a></code>.</p>
     </div>
     <div id="details">
@@ -146,8 +146,8 @@ extracted from the input object <code>inp</code>.</p>
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>A. Alfons, M. Templ (2011) Simulation of close-to-reality population data for household surveys with application to EU-SILC. 
-<em>Statistical Methods &amp; Applications</em>, <strong>20</strong> (3), 383--407. <a href="https://doi.org/10.1007/s10260-011-0163-2" class="external-link">doi:10.1007/s10260-011-0163-2</a></p>
+    <p>A. Alfons, M. Templ (2011) Simulation of close-to-reality population data for household surveys with application to EU-SILC.
+<em>Statistical Methods &amp; Applications</em>, <strong>20</strong> (3), 383–407. <a href="https://doi.org/10.1007/s10260-011-0163-2" class="external-link">doi:10.1007/s10260-011-0163-2</a></p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -199,15 +199,15 @@ extracted from the input object <code>inp</code>.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

@@ -5,7 +5,7 @@ data by resampling from survey data."><!-- mathjax --><script src="https://cdnjs
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -30,20 +30,20 @@ data by resampling from survey data."><!-- mathjax --><script src="https://cdnjs
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/statistikat/simPop/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Simulate the household structure of population data</h1>
-    <small class="dont-index">Source: <a href="https://github.com/statistikat/simPop/blob/HEAD/R/simStructure.R" class="external-link"><code>R/simStructure.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/statistikat/simPop/blob/master/R/simStructure.R" class="external-link"><code>R/simStructure.R</code></a></small>
     <div class="hidden name"><code>simStructure.Rd</code></div>
     </div>
 
@@ -65,12 +65,14 @@ data by resampling from survey data.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>dataS</dt>
+
+
+<dl><dt id="arg-datas">dataS<a class="anchor" aria-label="anchor" href="#arg-datas"></a></dt>
 <dd><p>an object of class <code>dataObj</code> containing household survey
 data that is usually generated with <code><a href="specifyInput.html">specifyInput</a></code>.</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>a character string specifying the method to be used for
 simulating the household sizes.  Accepted values are <code>"direct"</code>
 (estimation of the population totals for each combination of stratum and
@@ -81,28 +83,26 @@ distributions), or <code>"distribution"</code> (random draws from the observed
 conditional distributions within the strata).</p></dd>
 
 
-<dt>basicHHvars</dt>
+<dt id="arg-basichhvars">basicHHvars<a class="anchor" aria-label="anchor" href="#arg-basichhvars"></a></dt>
 <dd><p>a character vector specifying important variables for the
 household structure that need to be available in <code>dataS</code>. Typically
 variables such as age or sex may be used.</p></dd>
 
 
-<dt>seed</dt>
+<dt id="arg-seed">seed<a class="anchor" aria-label="anchor" href="#arg-seed"></a></dt>
 <dd><p>optional; an integer value to be used as the seed of the random
 number generator, or an integer vector containing the state of the random
 number generator to be restored.</p></dd>
 
 
-<dt>MaxNWts</dt>
-<dd><p>optional; an integer value for the multinom method for controlling 
+<dt id="arg-maxnwts">MaxNWts<a class="anchor" aria-label="anchor" href="#arg-maxnwts"></a></dt>
+<dd><p>optional; an integer value for the multinom method for controlling
 the maximum number of weights.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>An object of class <code>simPopObj</code> containing the simulated
+    <p>An object of class <code>simPopObj</code> containing the simulated
 population household structure as well as the underlying sample that was
 provided as input.</p>
     </div>
@@ -115,7 +115,7 @@ this happens in a session.</p>
     <div id="references">
     <h2>References</h2>
     <p>M. Templ, B. Meindl, A. Kowarik, A. Alfons, O. Dupriez (2017) Simulation of Synthetic Populations for Survey Data Considering Auxiliary
-Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1--38. <a href="https://doi.org/10.18637/jss.v079.i10" class="external-link">doi:10.18637/jss.v079.i10</a></p>
+Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1–38. <a href="https://doi.org/10.18637/jss.v079.i10" class="external-link">doi:10.18637/jss.v079.i10</a></p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -131,12 +131,12 @@ Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">eusilcS</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span><span class="va">inp</span> <span class="op">&lt;-</span> <span class="fu"><a href="specifyInput.html">specifyInput</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">eusilcS</span>, hhid<span class="op">=</span><span class="st">"db030"</span>, hhsize<span class="op">=</span><span class="st">"hsize"</span>, strata<span class="op">=</span><span class="st">"db040"</span>, weight<span class="op">=</span><span class="st">"db090"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">eusilcP</span> <span class="op">&lt;-</span> <span class="fu">simStructure</span><span class="op">(</span>data<span class="op">=</span><span class="va">inp</span>, method<span class="op">=</span><span class="st">"direct"</span>, basicHHvars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"rb090"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">eusilcP</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">eusilcP</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -152,15 +152,15 @@ Information. <em>Journal of Statistical Survey</em>, <strong>79</strong> (10), 1
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 
